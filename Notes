@@ -5,3 +5,48 @@
 
 Meridian
 
+What is the web server software and version running on Meridian?
+
+i have done an nmap scan 
+
+nmap -sVC -p- -T5 172.20.34.89                                                        
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-05-01 10:06 CEST
+Verbosity Increased to 1.
+Completed SYN Stealth Scan at 10:07, 25.50s elapsed (65535 total ports)
+Initiating Service scan at 10:07
+Scanning 2 services on meridian.hv (172.20.34.89)
+Completed Service scan at 10:07, 6.08s elapsed (2 services on 1 host)
+NSE: Script scanning 172.20.34.89.
+Initiating NSE at 10:07
+Completed NSE at 10:07, 1.07s elapsed
+Initiating NSE at 10:07
+Completed NSE at 10:07, 0.09s elapsed
+Initiating NSE at 10:07
+Completed NSE at 10:07, 0.00s elapsed
+Nmap scan report for meridian.hv (172.20.34.89)
+Host is up (0.022s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 95:30:f3:df:a0:a0:f5:2c:cb:3a:f7:4a:7d:c4:62:d5 (RSA)
+|   256 21:d6:55:80:3b:05:0b:b6:f2:f3:0d:07:65:6a:87:41 (ECDSA)
+|_  256 6b:5a:cd:21:7f:e0:a5:b2:96:02:18:13:56:db:8c:86 (ED25519)
+80/tcp open  http    Apache httpd 2.4.66
+| http-robots.txt: 1 disallowed entry 
+|_/a5b7zqw-internal
+|_http-favicon: Unknown favicon MD5: C09DC1B57175A772971F7912AA0DAC68
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.66 (Debian)
+|_http-title: Home \xE2\x80\x94 Meridian
+Service Info: Host: _default_; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+and then for being sure
+
+curl -I http://meridian.hv     
+HTTP/1.1 200 OK
+Date: Fri, 01 May 2026 08:08:59 GMT
+Server: Apache/2.4.66 (Debian)
+Content-Type: text/html; charset=UTF-8
+
