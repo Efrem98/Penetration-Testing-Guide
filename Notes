@@ -50,3 +50,82 @@ Date: Fri, 01 May 2026 08:08:59 GMT
 Server: Apache/2.4.66 (Debian)
 Content-Type: text/html; charset=UTF-8
 
+What is the server-side programming language used by Meridian?
+
+curl http://meridian.hv/services.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meridian Digital Agency — We craft digital experiences that drive results.">
+    <title>Services — Meridian</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/fonts/inter.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+What is the directory excluded from search engine indexing on Meridian?
+
+80/tcp open  http    Apache httpd 2.4.66
+| http-robots.txt: 1 disallowed entry 
+|_/a5b7zqw-internal
+
+What is the admin panel directory of Meridian?
+
+gobuster dir -u http://meridian.hv -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt -b 403,404 
+
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://meridian.hv
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/raft-large-directories-lowercase.txt
+[+] Negative Status codes:   403,404
+[+] User Agent:              gobuster/3.6
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/includes             (Status: 301) [Size: 353] [--> http://meridian.hv/includes/]
+/js                   (Status: 301) [Size: 347] [--> http://meridian.hv/js/]
+/css                  (Status: 301) [Size: 348] [--> http://meridian.hv/css/]
+/img                  (Status: 301) [Size: 348] [--> http://meridian.hv/img/]
+/fonts                (Status: 301) [Size: 350] [--> http://meridian.hv/fonts/]
+/webadmin             (Status: 301) [Size: 353] [--> http://meridian.hv/webadmin/]
+/vendor               (Status: 301) [Size: 351] [--> http://meridian.hv/vendor/]
+Progress: 12274 / 56163 (21.85%)^C
+[!] Keyboard interrupt detected, terminating.
+Progress: 12398 / 56163 (22.08%)
+
+What is the active subdomain found on Meridian?
+
+ffuf -u http://meridian.hv -H "Host: FUZZ.meridian.hv" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt           
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://meridian.hv
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+ :: Header           : Host: FUZZ.meridian.hv
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+action                  [Status: 200, Size: 1023, Words: 379, Lines: 51, Duration: 24ms]
+:: Progress: [4989/4989] :: Job [1/1] :: 1639 req/sec :: Duration: [0:00:05] :: Errors: 0 ::
+
+
