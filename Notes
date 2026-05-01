@@ -152,3 +152,16 @@ After logging into Meridian's admin panel as the black user, identify the releva
 After logging into Meridian's admin panel as the black user, identify the relevant vulnerability and gain access to the admin user's account. What is the flag visible only to the admin user?
 
 -> cookie creation
+
+After logging into Meridian's admin panel as the admin user, identify the relevant vulnerability and read the contents of the /flag.txt file on the system. What is the obtained flag?
+
+HTTP/1.1 200 OK
+Date: Fri, 01 May 2026 09:39:32 GMT
+Server: Apache/2.4.66 (Debian)
+Content-Length: 412
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json
+
+{"success":true,"data":{"sitename":"Hackviser{5540522f6d546b18895ae39051af0497}","tagline":"Crafting digital experiences","contact_email":"hello@meridian.hv","language":"English (en-US)","smtp.host":"mail.meridian.hv","smtp.port":"587","smtp.username":"noreply@meridian.hv","smtp.encryption":"TLS","backup.schedule":"daily","backup.retention":"30","backup.path":"\/var\/backups\/meridian","cache_driver":"file"}}
+
