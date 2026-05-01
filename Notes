@@ -149,4 +149,6 @@ After logging into Meridian's admin panel as the black user, identify the releva
 
 -> vedere immagine vulnerabilità idor
 
+After logging into Meridian's admin panel as the black user, identify the relevant vulnerability and gain access to the admin user's account. What is the flag visible only to the admin user?
 
+-> cookie creation
